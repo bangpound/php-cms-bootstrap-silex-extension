@@ -1,5 +1,7 @@
 <?php
 
+namespace Bangpound\Process;
+
 use Symfony\Component\HttpFoundation\Request;
 
 class InjectRequestGlobals {
