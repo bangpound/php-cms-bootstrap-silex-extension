@@ -1,0 +1,63 @@
+{
+    "name": "bangpound/php-cms-bootstrap-silex-extension",
+    "description": "Bootstrap PHP CMS in isolated context from Silex.",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "~1.1",
+        "symfony/process": "~2.3"
+    },
+    "require-dev": {
+        "drupal/drupal": "7.23",
+        "drush/drush": "~6.0.0",
+        "wordpress/wordpress": "3.6.1",
+        "wp-cli/wp-cli": "@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "Bangpound\\Silex\\": "src/",
+            "Bangpound\\Process\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/drupal",
+                "version": "7.23",
+                "dist": {
+                    "url": "http://ftp.drupal.org/files/projects/drupal-7.23.tar.gz",
+                    "type": "tar"
+                },
+                "source": {
+                    "url": "http://git.drupal.org/project/drupal.git",
+                    "type": "git",
+                    "reference": "7.x"
+                },
+                "autoload": {
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress/wordpress",
+                "version": "3.6.1",
+                "dist": {
+                    "url": "http://wordpress.org/wordpress-3.6.1.tar.gz",
+                    "type": "tar"
+                },
+                "source": {
+                    "type": "svn",
+                    "url": "http://core.svn.wordpress.org/",
+                    "reference": "trunk",
+                    "trunk-path": "trunk",
+                    "branches-path": "branches",
+                    "tags-path": "tags"
+                },
+                "autoload": {
+                }
+            }
+        }
+    ]
+}
