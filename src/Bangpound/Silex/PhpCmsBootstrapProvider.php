@@ -20,6 +20,7 @@ class PhpCmsBootstrapProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $app['php.drupal7.bootstrap'] = $app->protect(function ($url, $pre_bootstrap = '', $post_bootstrap = '') use ($app) {
+            $url = str_replace("'", "\\'", $url);
             return <<<EOT
 define('DRUPAL_ROOT', getcwd());
 require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
